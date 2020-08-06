@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from homepage.views import mainpage, todo
+from homepage.views import mainpage, todo, addtodo, deletetodo
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', mainpage, name='mainpage'),
     path('todo/', todo, name='todo'),
+    path('addtodo/', addtodo, name='addtodo'),
+    path('deletetodo/<int:itemid>/', deletetodo, name='deletetodo'),
 ]
