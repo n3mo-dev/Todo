@@ -7,7 +7,5 @@ def mainpage(request):
 
 def todo(request):
     item = Todo.objects.all()
-    print(item)
     dict = { 'item' : item }
-    print(dict)
     return render(request, 'todo.html', dict)
